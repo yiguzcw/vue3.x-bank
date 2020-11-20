@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="viewport"
+		  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="WT.pageID" content="<%= htmlWebpackPlugin.options.chunkId %>">
+	<meta name="WT.pagetitle" content="<%= htmlWebpackPlugin.options.title %>">
+	<meta name="WT.h5_app_id" content="<%= htmlWebpackPlugin.options.h5AppId %>">
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+
+	<% for (var cdnCssIndex in htmlWebpackPlugin.options.cdnList.css &&
+	htmlWebpackPlugin.options.cdnList.css) { %>
+	<link href="<%= htmlWebpackPlugin.options.cdnList.css[cdnCssIndex] %>" rel="external nofollow preload stylesheet"
+		  as="style"
+	>
+	<% } %>
+
+	<% for (var cdnJsIndex in htmlWebpackPlugin.options.cdnList.js &&
+	htmlWebpackPlugin.options.cdnList.js) { %>
+	<link href="<%= htmlWebpackPlugin.options.cdnList.js[cdnJsIndex] %>" rel="external nofollow  preload"
+		  as="script">
+	<% } %>
+
+	<% for (var cssIndex in htmlWebpackPlugin.options.libList.css &&
+	htmlWebpackPlugin.options.libList.css) { %>
+	<link href="<%= htmlWebpackPlugin.options.libList.css[cssIndex] %>"
+		  rel="preload stylesheet  external nofollow " as="style">
+
+	<% } %>
+	<script>
+		// 默认情况下，埋点JS-SDK加载完成自动初始化
+		// 在埋点JS-SDK加载前，设置JS全局变量用于阻止默认初始化
+		window.WTNotAutoInit = true;
+	</script>
+</head>
+
+<body>
+<div id="app"></div>
+
+<% for (var cdnJsIndex1 in htmlWebpackPlugin.options.cdnList.js &&
+htmlWebpackPlugin.options.cdnList.js) { %>
+<script src="<%= htmlWebpackPlugin.options.cdnList.js[cdnJsIndex1] %>"></script>
+<% } %>
+
+
+<% for(var jsIndex in htmlWebpackPlugin.options.libList.js &&
+htmlWebpackPlugin.options.libList.js ){ %>
+<script src="<%= htmlWebpackPlugin.options.libList.js[jsIndex] %>"></script>
+<% }%>
+
+</body>
+</html>

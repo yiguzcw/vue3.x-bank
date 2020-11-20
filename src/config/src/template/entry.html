@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+
+<!-- dev 模式下的 首页汇总业务页面入口 -->
+<h1>当前运行的项目：</h1>
+<%= htmlWebpackPlugin.options.businessListHtml %>
+</body>
+</html>
+<script>
+	// document.querySelectorAll('a').forEach(item => {
+	// 	item.innerText = item.href.replace('8099', location.port);
+	// 	item.href = item.href.replace('8099', location.port) + '?fbparams={"authorization":"test"}';
+	// });
+</script>

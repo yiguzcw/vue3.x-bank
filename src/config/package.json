@@ -1,0 +1,75 @@
+{
+	"name": "FB-Online-Preform",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"serve": "cross-env  APP_ENV=dev vue-cli-service serve",
+		"build": "cross-env  APP_ENV=prod vue-cli-service build",
+		"dev": "cross-env  APP_ENV=dev vue-cli-service serve",
+		"prod": "cross-env APP_ENV=prod  vue-cli-service build",
+		"st-test": "cross-env APP_ENV=st-test  vue-cli-service build",
+		"uat-test": "cross-env APP_ENV=uat-test  vue-cli-service build",
+		"uat1-test": "cross-env APP_ENV=uat1-test vue-cli-service build",
+		"debug": "cross-env APP_ENV=debug vue-cli-service build --mode development",
+		"debug-pc": "cross-env APP_ENV=debug-pc vue-cli-service build --mode development",
+		"debug-offline": "cross-env APP_ENV=debug-offline vue-cli-service build --mode development",
+		"lint": "vue-cli-service lint --fix",
+		"test:e2e": "vue-cli-service test:e2e",
+		"test:unit": "vue-cli-service test:unit",
+		"inspect": "cross-env APP_ENV=prod vue-cli-service inspect --mode production > webpack.js",
+		"copy": "node ./build/copyscript.js",
+		"build-all": "npm run build --dev && npm run build --test && npm run build --pro"
+	},
+	"dependencies": {
+		"axios": "^0.19.0",
+		"better-scroll": "^1.15.2",
+		"fastclick": "^1.0.6",
+		"register-service-worker": "^1.6.2",
+		"swiper": "^4.5.0",
+		"vue": "^2.6.10",
+		"vue-awesome-swiper": "^3.1.3",
+		"vue-dom-portal": "^0.1.6",
+		"vue-router": "^3.0.3",
+		"vuex": "^3.0.1"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^3.9.0",
+		"@vue/cli-plugin-eslint": "^3.9.0",
+		"@vue/cli-plugin-pwa": "^3.9.0",
+		"@vue/cli-plugin-unit-jest": "^3.9.0",
+		"@vue/cli-service": "^3.9.0",
+		"@vue/eslint-config-standard": "^4.0.0",
+		"@vue/test-utils": "1.0.0-beta.29",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-eslint": "^10.0.1",
+		"babel-jest": "^23.6.0",
+		"eslint": "^6.1.0",
+		"eslint-plugin-vue": "^5.2.3",
+		"less": "^3.0.4",
+		"less-loader": "^5.0.0",
+		"lint-staged": "^9.2.1",
+		"vue-template-compiler": "^2.6.10",
+		"chai": "^4.1.2",
+		"cross-env": "^5.2.0",
+		"eslint-plugin-promise": "^4.1.1",
+		"eslint-plugin-standard": "^4.0.0",
+		"style-resources-loader": "^1.2.1",
+		"vconsole-webpack-plugin": "^1.4.2",
+		"vue-skeleton-webpack-plugin": "^1.2.2",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"cssnano": "^4.1.10",
+		"webpack-bundle-analyzer": "^3.3.2",
+		"worker-loader": "^2.0.0",
+		"compression-webpack-plugin": "^3.0.0",
+		"mockjs": "^1.0.1-beta3"
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.{js,vue}": [
+			"vue-cli-service lint",
+			"git add"
+		]
+	}
+}
