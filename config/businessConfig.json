@@ -1,0 +1,11 @@
+{
+    // 开发打包业务
+    "businessArray": [
+        // {chunk: 'acctOpen', chunkName: '平安银行开户预填单'},
+        // {chunk: 'infoComplement', chunkName: '平安银行开户预约信息补全'},
+        { "chunk": "acctOpen", "chunkName": "在家办开户", "chunkId": "FBAPP-h5-KKSQ" },
+        { "chunk": "acctOpenStandard", "chunkName": "在家办开户", "chunkId": "FBAPP-h5-XXTX" },
+        { "chunk": "riskAssess", "chunkName": "远程风测" },
+        { "chunk": "riskAssessStandard", "chunkName": "远程风测" }
+    ]
+}

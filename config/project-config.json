@@ -1,0 +1,18 @@
+{
+    // 埋点监控appid
+    "h5AppId": "AB41E6D12E1FF03B79E4EAC86E70DEDC",
+    "cdnList": {
+        "css": ["https://cdn.sdb.com.cn/poppy/1.0.1/poppy.rem.min.css"],
+        "js": [
+            "https://test-cdn-fat.pingan.com.cn/app_com/webtrends/h5/2.0.0/banksdc_m.js",
+            "https://cdn.sdb.com.cn/poppy/1.0.1/poppy.rem.min.js",
+            "https://test-cdn-fat.pingan.com.cn/app_com/authsdk/1.0.0/auth-sdk.js",
+            "https://test-b-fat.pingan.com.cn/platform/aladdinfix/1.0.0/aladdinfix.min.js"
+        ]
+    },
+    // 外部资源依赖
+    "libList": {
+        "css": [], // 外部依赖css
+        "js": ["../../libs/vue.js"] // 外部依赖js
+    }
+}
